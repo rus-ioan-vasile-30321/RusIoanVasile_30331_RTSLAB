@@ -7,8 +7,8 @@ public class Main {
     private static final int processorLoad = 1000000;
 
     public static void main(String[] args) {
-        Model model = new Model(noOfThreads);
         View view = new View(noOfThreads);
+        Model model = new Model(noOfThreads);
         Controller controller = new Controller(model, view);
         controller.startThreads(noOfThreads, processorLoad);
     }
