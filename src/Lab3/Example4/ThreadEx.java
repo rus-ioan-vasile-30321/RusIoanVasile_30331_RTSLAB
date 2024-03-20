@@ -11,12 +11,14 @@ class ThreadEx extends Thread {
     public void run() {
         System.out.println(Thread.currentThread().getName() + " ON.");
         try {
-            for (int i = 1; i < 1000; i++) {
-                System.out.print(".");
-                Thread.sleep(250);
+            for (int i = 1; i <= 1000; i++) {
+                System.out.println(". "+this.getName());
+                Thread.sleep(500);
                 synchronized (this) {
-                    if (stop)
-                        break;
+                    if (stop){
+                        System.out.println("break"+this.getName());    break;}
+
+                    else System.out.println("if "+ this.getName());
                 }
             }
         } catch (Exception exc) {
